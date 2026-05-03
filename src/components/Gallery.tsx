@@ -4,35 +4,35 @@ import React from 'react';
 
 const Gallery = () => {
   const images = [
-    { src: "/src/assets/andip-waterfall.jpg", alt: "Andip at waterfall", span: "md:col-span-2 md:row-span-2" },
-    { src: "/src/assets/andip-lake.jpg", alt: "Andip by the lake", span: "md:col-span-1 md:row-span-1" },
-    { src: "/src/assets/andip-dogs.jpg", alt: "Andip with dogs", span: "md:col-span-1 md:row-span-1" },
-    { src: "/src/assets/andip-temple.jpg", alt: "Andip at temple", span: "md:col-span-2 md:row-span-1" },
+    { src: "/src/assets/andip-waterfall.jpg", alt: "Waterfall", rotate: "-rotate-2", scale: "hover:scale-105" },
+    { src: "/src/assets/andip-lake.jpg", alt: "Lake", rotate: "rotate-3", scale: "hover:scale-110" },
+    { src: "/src/assets/andip-dogs.jpg", alt: "Dogs", rotate: "-rotate-3", scale: "hover:scale-105" },
+    { src: "/src/assets/andip-temple.jpg", alt: "Temple", rotate: "rotate-2", scale: "hover:scale-110" },
   ];
 
   return (
-    <section id="gallery" className="py-24 bg-white">
+    <section id="gallery" className="py-24 bg-yellow-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-3">Visual Journey</h2>
-          <h3 className="text-4xl font-bold text-gray-900 mb-4">Moments from the Trail</h3>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A glimpse into the incredible landscapes and experiences that await you in Nepal.
-          </p>
+          <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-black">
+            The <span className="text-pink-500">Photo</span> Dump
+          </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className={`relative overflow-hidden rounded-3xl group ${image.span}`}
+              className={`relative aspect-square bg-white p-4 border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-500 ${image.rotate} ${image.scale} z-10 hover:z-20`}
             >
               <img 
                 src={image.src} 
                 alt={image.alt} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover border-2 border-black"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+              <div className="mt-4 text-center font-black uppercase italic text-sm">
+                {image.alt} #NepalVibes
+              </div>
             </div>
           ))}
         </div>

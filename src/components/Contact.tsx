@@ -1,87 +1,52 @@
 "use client";
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import { showSuccess } from "@/utils/toast";
+import { Instagram, MessageCircle, Phone } from 'lucide-react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    showSuccess("Message sent! Andip will get back to you soon.");
-  };
-
   return (
-    <section id="contact" className="py-24 bg-emerald-900 text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-800/50 -skew-x-12 translate-x-1/4 z-0" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-sm font-bold text-emerald-400 tracking-widest uppercase mb-3">Get In Touch</h2>
-            <h3 className="text-4xl font-bold mb-8 leading-tight">Ready to start your Himalayan adventure?</h3>
-            <p className="text-emerald-100 text-lg mb-10 leading-relaxed">
-              Have questions about a specific trek or want a custom itinerary? Send me a message and let's start planning your dream trip to Nepal.
-            </p>
-            
-            <div className="space-y-6 mb-10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-800 rounded-2xl flex items-center justify-center">
-                  <Mail className="h-6 w-6 text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-emerald-300 font-medium">Email Me</p>
-                  <p className="text-lg font-bold">andip.tours@nepal.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-800 rounded-2xl flex items-center justify-center">
-                  <Instagram className="h-6 w-6 text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-emerald-300 font-medium">Follow on Instagram</p>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-emerald-400 transition-colors">@andip_nepal_tours</a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-800 rounded-2xl flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-emerald-300 font-medium">WhatsApp</p>
-                  <p className="text-lg font-bold">+977 98XXXXXXXX</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section id="contact" className="py-32 bg-emerald-500 relative overflow-hidden">
+      {/* Funky background text */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none">
+        <span className="text-[20vw] font-black text-black whitespace-nowrap uppercase italic">LET'S GO! LET'S GO!</span>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 className="text-6xl md:text-8xl font-black text-black uppercase italic tracking-tighter mb-12 leading-none">
+          Don't be a <br /> <span className="text-white underline decoration-black decoration-8">Stranger!</span>
+        </h2>
+        
+        <p className="text-2xl font-black text-black/80 mb-16 uppercase italic">
+          No boring forms here. Just hit me up directly and let's start planning!
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center justify-center bg-white p-12 rounded-[40px] border-8 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-2 hover:translate-y-2 hover:shadow-none"
+          >
+            <Instagram className="h-20 w-20 text-pink-500 mb-6 group-hover:scale-110 transition-transform" />
+            <span className="text-3xl font-black uppercase italic">Instagram</span>
+            <span className="text-lg font-bold text-gray-500 mt-2">@andip_nepal_tours</span>
+          </a>
           
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Full Name</label>
-                  <Input placeholder="John Doe" className="bg-gray-50 border-gray-200 text-gray-900 h-12 rounded-xl focus:ring-emerald-500" required />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Email Address</label>
-                  <Input type="email" placeholder="john@example.com" className="bg-gray-50 border-gray-200 text-gray-900 h-12 rounded-xl focus:ring-emerald-500" required />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Interested In</label>
-                <Input placeholder="e.g. Everest Base Camp Trek" className="bg-gray-50 border-gray-200 text-gray-900 h-12 rounded-xl focus:ring-emerald-500" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Your Message</label>
-                <Textarea placeholder="Tell me about your travel plans..." className="bg-gray-50 border-gray-200 text-gray-900 min-h-[150px] rounded-xl focus:ring-emerald-500" required />
-              </div>
-              <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white h-14 rounded-xl text-lg font-bold shadow-lg shadow-emerald-900/20">
-                Send Message
-              </Button>
-            </form>
-          </div>
+          <a 
+            href="https://wa.me/97798XXXXXXXX" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center justify-center bg-yellow-400 p-12 rounded-[40px] border-8 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-2 hover:translate-y-2 hover:shadow-none"
+          >
+            <MessageCircle className="h-20 w-20 text-black mb-6 group-hover:scale-110 transition-transform" />
+            <span className="text-3xl font-black uppercase italic">WhatsApp</span>
+            <span className="text-lg font-bold text-black/60 mt-2">+977 98XXXXXXXX</span>
+          </a>
+        </div>
+
+        <div className="mt-20 flex items-center justify-center gap-4 bg-black text-white py-4 px-8 rounded-full border-4 border-white w-fit mx-auto rotate-2">
+          <Phone className="h-6 w-6 text-emerald-400" />
+          <span className="text-xl font-black uppercase italic">Call me anytime!</span>
         </div>
       </div>
     </section>

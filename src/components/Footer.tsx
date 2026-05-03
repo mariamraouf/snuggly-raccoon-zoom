@@ -5,28 +5,30 @@ import { Mountain, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <footer className="bg-black text-white py-16 border-t-8 border-yellow-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <Mountain className="h-6 w-6 text-emerald-500" />
-            <span className="text-xl font-bold text-white">Andip<span className="text-emerald-500">Tours</span></span>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="flex items-center gap-3">
+            <div className="bg-emerald-500 p-2 rounded-lg border-2 border-white">
+              <Mountain className="h-8 w-8 text-black" />
+            </div>
+            <span className="text-3xl font-black tracking-tighter uppercase italic">Andip<span className="text-emerald-500">!</span></span>
           </div>
           
-          <div className="flex gap-8 text-sm font-medium">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#tours" className="hover:text-white transition-colors">Tours</a>
-            <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          <div className="flex flex-wrap justify-center gap-10 text-lg font-black uppercase italic">
+            <a href="#about" className="hover:text-emerald-400 transition-colors">The Vibe</a>
+            <a href="#tours" className="hover:text-emerald-400 transition-colors">Adventures</a>
+            <a href="#gallery" className="hover:text-emerald-400 transition-colors">Pics</a>
+            <a href="#contact" className="hover:text-emerald-400 transition-colors">Hit Me Up</a>
           </div>
           
-          <div className="flex items-center gap-1 text-sm">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> in Nepal
+          <div className="flex items-center gap-2 text-lg font-black uppercase italic">
+            Made with <Heart className="h-6 w-6 text-red-500 fill-red-500 animate-pulse" /> in Nepal
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-xs">
-          © {new Date().getFullYear()} Andip Tours Nepal. All rights reserved.
+        <div className="mt-16 pt-8 border-t border-white/10 text-center text-sm font-bold text-gray-500 uppercase tracking-widest">
+          © {new Date().getFullYear()} ANDIP TOURS NEPAL. NO BORING STUFF ALLOWED.
         </div>
       </div>
     </footer>

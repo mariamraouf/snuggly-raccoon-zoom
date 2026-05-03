@@ -1,71 +1,71 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mountain, Compass, Camera, Users } from 'lucide-react';
+import { Mountain, Camera, Users, Zap } from 'lucide-react';
 
 const Tours = () => {
-  const tourTypes = [
+  const adventures = [
     {
-      title: "Everest Base Camp",
-      description: "The ultimate trekking challenge with breathtaking views of the world's highest peak.",
+      title: "The Big One",
+      desc: "Everest Base Camp. It's tough, it's epic, it's life-changing.",
       icon: Mountain,
-      duration: "14-16 Days",
-      difficulty: "Challenging"
+      color: "bg-emerald-400",
+      tag: "14 DAYS"
     },
     {
-      title: "Cultural Heritage",
-      description: "Explore the ancient temples, vibrant markets, and rich history of Kathmandu Valley.",
-      icon: Compass,
-      duration: "3-5 Days",
-      difficulty: "Easy"
+      title: "Culture Trip",
+      desc: "Temples, markets, and the best food you've ever tasted in Kathmandu.",
+      icon: Zap,
+      color: "bg-yellow-400",
+      tag: "3 DAYS"
     },
     {
-      title: "Photography Tours",
-      description: "Capture the golden hour over the Himalayas and the colorful life of local villages.",
+      title: "Insta-Worthy",
+      desc: "We go where the light is perfect and the views are insane.",
       icon: Camera,
-      duration: "7-10 Days",
-      difficulty: "Moderate"
+      color: "bg-pink-400",
+      tag: "7 DAYS"
     },
     {
-      title: "Village Immersion",
-      description: "Stay with local families and experience the authentic lifestyle of rural Nepal.",
+      title: "Village Life",
+      desc: "Stay with my friends in the mountains. Real people, real stories.",
       icon: Users,
-      duration: "5-7 Days",
-      difficulty: "Moderate"
+      color: "bg-blue-400",
+      tag: "5 DAYS"
     }
   ];
 
   return (
-    <section id="tours" className="py-24 bg-gray-50">
+    <section id="tours" className="py-24 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-3">Our Adventures</h2>
-          <h3 className="text-4xl font-bold text-gray-900 mb-4">Curated Experiences for Every Traveler</h3>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Whether you're looking for high-altitude thrills or peaceful cultural discovery, I have the perfect journey for you.
+        <div className="text-center mb-20">
+          <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-6">
+            What's the <span className="text-emerald-400">Plan?</span>
+          </h2>
+          <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">
+            Pick your vibe. I can customize anything to make it perfect for you.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {tourTypes.map((tour, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 bg-white rounded-3xl overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4">
-                  <tour.icon className="h-6 w-6 text-emerald-600" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {adventures.map((adv, index) => (
+            <div 
+              key={index} 
+              className="group relative bg-white text-black p-10 rounded-[40px] border-4 border-white hover:bg-emerald-50 transition-colors cursor-pointer"
+            >
+              <div className={`absolute -top-6 -right-6 ${adv.color} text-black font-black px-6 py-2 rounded-full border-4 border-black rotate-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]`}>
+                {adv.tag}
+              </div>
+              <div className="flex items-start gap-6">
+                <div className={`${adv.color} p-5 rounded-3xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]`}>
+                  <adv.icon className="h-10 w-10" />
                 </div>
-                <CardTitle className="text-xl font-bold">{tour.title}</CardTitle>
-                <CardDescription className="text-gray-500 leading-relaxed">
-                  {tour.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                  <span className="text-xs font-bold text-emerald-600 uppercase">{tour.duration}</span>
-                  <span className="text-xs font-bold text-gray-400 uppercase">{tour.difficulty}</span>
+                <div>
+                  <h3 className="text-4xl font-black uppercase mb-4 italic">{adv.title}</h3>
+                  <p className="text-lg font-bold text-gray-600 leading-tight">{adv.desc}</p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
