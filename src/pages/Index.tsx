@@ -1,14 +1,14 @@
 "use client";
 
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Tours from '@/components/Tours';
-import Gallery from '@/components/Gallery';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Tours from '../components/Tours';
+import Gallery from '../components/Gallery';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import { MadeWithDyad } from "../components/made-with-dyad";
 
 const Index = () => {
   return (
