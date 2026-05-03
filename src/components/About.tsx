@@ -1,53 +1,42 @@
 "use client";
 
 import React from 'react';
-import { Heart, Camera, Map, Coffee } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <div className="relative z-10 rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="aspect-[4/5] rounded-[40px] overflow-hidden border-8 border-black shadow-[20px_20px_0px_0px_rgba(16,185,129,1)]">
-                <img 
-                  src="/src/assets/andip-temple.jpg" 
-                  alt="Andip" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+    <section id="about" className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="relative group">
+            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
+              <img 
+                src="/src/assets/andip-temple.jpg" 
+                alt="Andip" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
-            {/* Decorative blobs */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-yellow-300 rounded-full -z-0 blur-3xl opacity-50" />
-            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-pink-300 rounded-full -z-0 blur-3xl opacity-50" />
+            <div className="absolute -bottom-10 -right-10 bg-emerald-600 text-white p-12 rounded-[2rem] shadow-2xl hidden xl:block">
+              <p className="text-6xl font-black mb-2">10+</p>
+              <p className="text-emerald-100 font-bold uppercase tracking-widest text-sm">Years Guiding</p>
+            </div>
           </div>
           
-          <div>
-            <h2 className="text-2xl font-black text-emerald-600 uppercase tracking-tighter mb-4 italic">Who is this guy?</h2>
-            <h3 className="text-5xl md:text-6xl font-black text-black mb-8 leading-[0.9] uppercase">
-              Just a local <br /> with a <span className="text-yellow-500">big heart</span> <br /> for the mountains.
+          <div className="space-y-8">
+            <h2 className="text-emerald-600 font-black uppercase tracking-widest text-sm">Namaste! I'm Andip</h2>
+            <h3 className="text-6xl md:text-7xl font-black text-black leading-[0.9] uppercase italic">
+              More than a guide, <br /> <span className="text-gray-300">I'm your local friend.</span>
             </h3>
-            <p className="text-xl text-gray-700 mb-10 font-medium leading-relaxed">
-              I've been wandering these trails since I could walk. I don't do "tours"—I do experiences. Whether we're chasing waterfalls, hanging with mountain dogs, or drinking tea with locals, it's all about the vibe. 
+            <p className="text-2xl text-gray-600 leading-relaxed font-medium">
+              I don't do standard tourist packages. I show you the Nepal that I love—the hidden trails, the quietest temples, and the best mountain tea spots that only locals know.
             </p>
-            
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 bg-yellow-50 border-4 border-black rounded-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                <Camera className="h-8 w-8 text-pink-500 mb-3" />
-                <p className="font-black uppercase text-sm">Pro Photo Spots</p>
+            <div className="pt-8 grid grid-cols-2 gap-12">
+              <div>
+                <h4 className="text-black font-black uppercase mb-2">Authentic</h4>
+                <p className="text-gray-500">Real experiences with real local families.</p>
               </div>
-              <div className="p-6 bg-emerald-50 border-4 border-black rounded-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                <Map className="h-8 w-8 text-emerald-600 mb-3" />
-                <p className="font-black uppercase text-sm">Secret Trails</p>
-              </div>
-              <div className="p-6 bg-pink-50 border-4 border-black rounded-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                <Coffee className="h-8 w-8 text-orange-500 mb-3" />
-                <p className="font-black uppercase text-sm">Local Tea Stops</p>
-              </div>
-              <div className="p-6 bg-blue-50 border-4 border-black rounded-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                <Heart className="h-8 w-8 text-red-500 mb-3" />
-                <p className="font-black uppercase text-sm">Good Times Only</p>
+              <div>
+                <h4 className="text-black font-black uppercase mb-2">Personal</h4>
+                <p className="text-gray-500">Every trip is tailored exactly to your vibe.</p>
               </div>
             </div>
           </div>

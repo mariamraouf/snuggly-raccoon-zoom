@@ -2,61 +2,48 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Sparkles, Instagram } from 'lucide-react';
+import { ChevronDown, Instagram } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden bg-yellow-50">
-      <div className="absolute top-20 left-10 animate-bounce hidden lg:block">
-        <div className="bg-pink-400 text-white font-black px-4 py-2 rounded-full border-2 border-black -rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          NEPAL IS CALLING! 🏔️
-        </div>
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Massive Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/src/assets/nepal-mountains.jpg" 
+          alt="Nepal Mountains" 
+          className="w-full h-full object-cover scale-105 animate-in fade-in zoom-in-110 duration-1000"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
       </div>
       
-      <div className="absolute bottom-40 right-20 animate-pulse hidden lg:block">
-        <div className="bg-emerald-400 text-black font-black px-4 py-2 rounded-full border-2 border-black rotate-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          BEST VIBES ONLY ✨
-        </div>
-      </div>
-
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-4 border-black text-black text-lg font-black mb-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-          <Sparkles className="h-5 w-5 text-yellow-500" />
-          YO! I'M ANDIP
-        </div>
-        
-        <h1 className="text-6xl md:text-9xl font-black text-black mb-8 tracking-tighter leading-[0.9] uppercase italic">
-          Let's Explore <br />
-          <span className="text-emerald-600 underline decoration-yellow-400 decoration-8">Nepal</span> Together
+        <p className="text-emerald-400 font-black tracking-[0.3em] uppercase mb-6 animate-in slide-in-from-bottom-4 duration-700">
+          Your Local Guide to the Himalayas
+        </p>
+        <h1 className="text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-[0.85] uppercase italic animate-in slide-in-from-bottom-6 duration-700 delay-100">
+          Experience <br />
+          <span className="text-transparent stroke-white stroke-2" style={{ WebkitTextStroke: '2px white' }}>The Real</span> Nepal
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-800 mb-12 max-w-2xl mx-auto font-bold leading-tight">
-          Forget the boring tourist traps. I'll show you the hidden waterfalls, the best mountain dogs, and the real soul of the Himalayas. 
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-black rounded-2xl px-10 h-20 text-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-            SEE THE ADVENTURES
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 animate-in slide-in-from-bottom-10 duration-700 delay-300">
+          <Button size="lg" className="bg-white hover:bg-emerald-500 text-black hover:text-white font-black rounded-full px-12 h-16 text-xl transition-all">
+            SEE THE TRIPS
           </Button>
           <a 
             href="https://instagram.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white hover:bg-pink-50 text-black font-black rounded-2xl px-10 h-20 text-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+            className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-black rounded-full px-12 h-16 text-xl border border-white/30 transition-all"
           >
-            <Instagram className="h-8 w-8 text-pink-500" />
-            HIT ME ON INSTA
+            <Instagram className="h-6 w-6" />
+            INSTAGRAM
           </a>
         </div>
       </div>
 
-      {/* Background Image with funky frame */}
-      <div className="absolute inset-0 -z-10 opacity-20">
-        <img 
-          src="/src/assets/nepal-mountains.jpg" 
-          alt="Nepal" 
-          className="w-full h-full object-cover grayscale"
-        />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <ChevronDown className="h-10 w-10 text-white/50" />
       </div>
     </section>
   );
