@@ -6,7 +6,7 @@ import { ChevronDown, Instagram } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative h-[100vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="/src/assets/nepal-mountains.jpg" 
@@ -20,7 +20,7 @@ const Hero = () => {
         <p className="text-emerald-400 font-black tracking-[0.5em] uppercase mb-8 animate-in slide-in-from-bottom-4 duration-700">
           Your Local Guide to the Himalayas
         </p>
-        <h1 className="text-8xl md:text-[12rem] font-black text-white mb-12 tracking-tighter leading-[0.8] uppercase italic animate-in slide-in-from-bottom-6 duration-700 delay-100">
+        <h1 className="text-7xl md:text-[10rem] font-black text-white mb-12 tracking-tighter leading-[0.8] uppercase italic animate-in slide-in-from-bottom-6 duration-700 delay-100">
           The Real <br />
           <span className="text-transparent stroke-white stroke-2" style={{ WebkitTextStroke: '3px white' }}>Nepal</span>
         </h1>
