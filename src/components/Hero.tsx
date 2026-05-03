@@ -7,14 +7,13 @@ import { ChevronDown, Instagram } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Massive Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/src/assets/nepal-mountains.jpg" 
           alt="Nepal Mountains" 
           className="w-full h-full object-cover scale-105 animate-in fade-in zoom-in-110 duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/60" />
       </div>
       
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
